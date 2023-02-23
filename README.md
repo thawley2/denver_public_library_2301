@@ -79,13 +79,6 @@ Use TDD to implement the following features:
   * `:start` which points to the publication year of the `Author`'s first book.
   * `:end` which points to the publication year of the `Author`'s last book.
 
-```
-pry(main)> dpl.publication_time_frame_for(charlotte_bronte)
-#=> {:start=>"1847", :end=>"1857"}
-
-pry(main)> dpl.publication_time_frame_for(harper_lee)
-#=> {:start=>"1960", :end=>"1960"}
-```
 
 Method Name                 | Return Value (type)
 -----------                 | -------------------
