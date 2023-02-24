@@ -26,6 +26,10 @@ RSpec.describe Library do
     it 'starts with an empty array of authors' do
       expect(@library.authors).to eq([])
     end
+
+    it 'starts with an empty array of checkout books' do
+      expect(@library.checked_out_books).to eq([])
+    end
   end
 
   describe '#add_author' do
