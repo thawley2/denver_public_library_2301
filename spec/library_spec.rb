@@ -45,6 +45,10 @@ RSpec.describe Library do
   describe '#sort_books_by_year' do
     it 'can sort books by year when given an author' do
       expect(@library.sort_books_by_year(@charlotte_bronte)).to eq([1847, 1853])
+
+      universe = @charlotte_bronte.write("The Universe", "1854")
+
+      expect(@library.sort_books_by_year(@charlotte_bronte)).to eq([1847, 1853, 1854])
     end
   end
 
