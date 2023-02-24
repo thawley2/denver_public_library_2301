@@ -31,8 +31,17 @@ RSpec.describe Author do
 
     it 'has a title' do
       jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-      
+
       expect(jane_eyre.title).to eq("Jane Eyre")
+    end
+  end
+
+  describe '#books' do
+    it 'can list all books writen by author' do
+      jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      villette = @charlotte_bronte.write("Villette", "1853")
+
+      expect(@charlotte_bronte.books).to eq([jane_eyre, villette])
     end
   end
 end
