@@ -5,6 +5,7 @@ require './lib/author'
 RSpec.describe Author do
   before(:each) do
     @charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    # @jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
   end
 
   describe '#initialize' do
@@ -18,6 +19,18 @@ RSpec.describe Author do
 
     it 'has an empty array of books' do
       expect(@charlotte_bronte.books).to eq([])
+    end
+  end
+
+  describe '#write' do
+    it 'can write a book' do
+      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      expect(jane_eyre.class).to be_a(Book)
+    end
+
+    it 'has a title' do
+      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      expect(jane_eyre.title).to eq("Jane Eyre")
     end
   end
 end
