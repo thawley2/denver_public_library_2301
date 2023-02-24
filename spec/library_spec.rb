@@ -41,4 +41,13 @@ RSpec.describe Library do
       expect(@library.books).to eq([@jane_eyre, @villette])
     end
   end
+
+  describe '#publication_time_frame_for' do
+    it 'shows the publication year of first and last book the author has written' do
+      @library.add_author(@charlotte_bronte)
+
+      expect(@library.publication_time_frame_for(@charlotte_bronte)).to eq({start: "1847", end: "1853"})
+    end
+
+  end
 end
