@@ -42,12 +42,21 @@ RSpec.describe Library do
     end
   end
 
+  describe '#sort_books_by_year' do
+    it 'can sort books by year when given an author' do
+      expect(@library.sort_books_by_year(@charlotte_bronte)).to eq([1847, 1853])
+    end
+  end
+
   describe '#publication_time_frame_for' do
     it 'shows the publication year of first and last book the author has written' do
       @library.add_author(@charlotte_bronte)
 
       expect(@library.publication_time_frame_for(@charlotte_bronte)).to eq({start: "1847", end: "1853"})
-    end
 
+      universe = @charlotte_bronte.write("The Universe", "1854")
+
+      expect(@library.publication_time_frame_for(@charlotte_bronte)).to eq({start: "1847", end: "1854"})
+    end
   end
 end
