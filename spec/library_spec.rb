@@ -13,5 +13,13 @@ RSpec.describe Library do
     it 'has a name' do
       expect(@library.name).to eq("Library of Alexandria")
     end
+
+    it 'starts with an empty array of books' do
+      expect(@library.books).to eq([])
+    end
+
+    it 'starts with an empty array of authors' do
+      expect(@library.authors).to eq([])
+    end
   end
 end
