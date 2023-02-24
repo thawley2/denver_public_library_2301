@@ -1,9 +1,10 @@
 class Library
- attr_reader :name, :books, :authors
+ attr_reader :name, :books, :authors, :checked_out_books
 
  def initialize(name)
   @name = name
   @books = []
+  @checked_out_books = []
   @authors = []
  end
 
