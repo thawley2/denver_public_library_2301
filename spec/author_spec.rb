@@ -24,12 +24,14 @@ RSpec.describe Author do
 
   describe '#write' do
     it 'can write a book' do
-      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-      expect(jane_eyre.class).to be_a(Book)
+      jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      
+      expect(jane_eyre.class).to eq(Book)
     end
 
     it 'has a title' do
-      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      
       expect(jane_eyre.title).to eq("Jane Eyre")
     end
   end
