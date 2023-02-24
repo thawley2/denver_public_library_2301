@@ -13,6 +13,6 @@ attr_reader :title
   end
 
   def publication_year
-    @publication_date.split(", ")[-1]
+    @publication_date.split(", ").last
   end
 end
