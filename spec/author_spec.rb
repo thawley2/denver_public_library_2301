@@ -1,6 +1,4 @@
-require 'rspec'
-require './lib/book'
-require './lib/author'
+require 'spec_helper'
 
 RSpec.describe Author do
   before(:each) do
